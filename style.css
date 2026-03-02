@@ -100,13 +100,13 @@ body {
 
 .logo {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 20px 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+  bottom: 30px;
+  right: 40px;
+  opacity: 0.8;
 }
 
 .logo img {
-  width: 100px;
+  width: 220px;
+  height: auto;
+  pointer-events: none;
 }
