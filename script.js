@@ -1,3 +1,10 @@
+function addTouchEvent(element, callback) {
+  element.addEventListener("click", callback);
+  element.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    callback();
+  });
+}
 const home = document.getElementById("home");
 const player = document.getElementById("player");
 const audio = document.getElementById("audio");
@@ -10,7 +17,9 @@ let currentSymbol = "";
 let isPlaying = false;
 
 document.querySelectorAll(".btn").forEach(btn => {
-  btn.addEventListener("pointerdown", () => {
+ addTouchEvent(btn, () => {
+  playSound(btn);
+});
     if (isPlaying) return;
 
     currentSound = btn.getAttribute("data-sound");
