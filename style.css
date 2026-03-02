@@ -5,20 +5,6 @@ body {
   font-family: sans-serif;
 }
 
-.logo {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 20px 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
-}
-
-.logo img {
-  width: 200px;
-}
-
-
 .screen {
   width: 100vw;
   height: 100vh;
@@ -110,4 +96,17 @@ body {
 
 .small-btn:active {
   transform: scale(0.9);
+}
+
+.logo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+}
+
+.logo img {
+  width: 200px;
 }
