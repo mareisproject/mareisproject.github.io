@@ -97,3 +97,16 @@ body {
 .small-btn:active {
   transform: scale(0.9);
 }
+
+.logo {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  opacity: 0.8;
+}
+
+.logo img {
+  width: 220px;
+  height: auto;
+  pointer-events: none;
+}
