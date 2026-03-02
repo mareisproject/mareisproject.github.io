@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Éveil aux sons de la mer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="apple-touch-icon" href="images/icon.png">
+<link rel="apple-touch-startup-image" href="images/splash.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+
+<div id="home" class="screen">
+  <div class="buttons">
+
+    <div class="btn" data-sound="sons/mouette.mp3" data-color="#dfefff">
+  <img src="images/mouette.png" alt="Mouette">
+</div>
+
+<div class="btn" data-sound="sons/vague.mp3" data-color="#b5e3ff">
+  <img src="images/vague.png" alt="Vague">
+</div>
+
+<div class="btn" data-sound="sons/vent.mp3" data-color="#e8f7ff">
+  <img src="images/vent.png" alt="Vent">
+</div>
+
+<div class="btn" data-sound="sons/corne.mp3" data-color="#ffd6d6">
+  <img src="images/corne.png" alt="Corne de brume">
+</div>
+
+<div class="btn large" data-sound="sons/moteur.mp3" data-color="#ffe8c2">
+  <img src="images/moteur.png" alt="Moteur de bateau">
+</div>
+
+  </div>
+</div>
+
+<div id="player" class="screen hidden">
+  <div id="visual" class="visual"></div>
+  <div class="controls">
+    <div id="replay" class="small-btn">🔁</div>
+    <div id="home-btn" class="small-btn">🏠</div>
+  </div>
+</div>
+
+<div id="player" class="screen hidden">
+  <div id="visual" class="visual"></div>
+  <div class="controls">
+    <div id="replay" class="small-btn">🔁</div>
+  </div>
+</div>
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

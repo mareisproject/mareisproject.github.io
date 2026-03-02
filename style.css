@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #a9d6e5;
+  font-family: sans-serif;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 220px);
+  gap: 60px;
+}
+
+.btn {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn img {
+  max-width: 80%;
+  max-height: 80%;
+  pointer-events: none; /* L’image ne bloque pas le clic */
+}
+
+.large {
+  grid-column: span 2;
+  justify-self: center;
+}
+
+.visual {
+  font-size: 9rem;
+  animation: breathe 4s infinite ease-in-out;
+}
+
+.small-btn {
+  margin-top: 40px;
+  font-size: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.visual img {
+  max-width: 400px; /* ou la taille que tu veux */
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.controls {
+  display: flex;
+  gap: 40px;       /* espace entre les boutons */
+  margin-top: 40px;
+}
+
+.small-btn {
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 20px;
+  background: #ffffffcc;
+  border-radius: 15px;
+  transition: transform 0.2s ease;
+}
+
+.small-btn:active {
+  transform: scale(0.9);
+}
