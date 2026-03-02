@@ -5,35 +5,38 @@ function addTouchEvent(element, callback) {
     callback();
   });
 }
+
 const home = document.getElementById("home");
 const player = document.getElementById("player");
 const audio = document.getElementById("audio");
 const visual = document.getElementById("visual");
 const replay = document.getElementById("replay");
+const homeBtn = document.getElementById("home-btn");
 
 let currentSound = "";
 let currentColor = "";
 let currentSymbol = "";
 let isPlaying = false;
 
+// -------- BOUTONS SONS --------
 document.querySelectorAll(".btn").forEach(btn => {
- addTouchEvent(btn, () => {
-  playSound(btn);
-});
+  addTouchEvent(btn, () => {
+
     if (isPlaying) return;
 
     currentSound = btn.getAttribute("data-sound");
     currentColor = btn.getAttribute("data-color");
-    currentSymbol = btn.innerHTML; // conserve l’image pour visual
+    currentSymbol = btn.innerHTML;
 
     launchSound();
   });
 });
 
+// -------- LANCEMENT SON --------
 function launchSound() {
   isPlaying = true;
 
-  visual.innerHTML = currentSymbol; // affiche l’image
+  visual.innerHTML = currentSymbol;
   player.style.backgroundColor = currentColor;
 
   home.classList.add("hidden");
@@ -47,6 +50,7 @@ function launchSound() {
   audio.play().catch(err => console.log(err));
 }
 
+// -------- FIN DU SON --------
 audio.addEventListener("ended", () => {
   isPlaying = false;
 
@@ -56,7 +60,8 @@ audio.addEventListener("ended", () => {
   }, 2000);
 });
 
-replay.addEventListener("pointerdown", () => {
+// -------- REECOUTER --------
+addTouchEvent(replay, () => {
   if (!currentSound) return;
 
   audio.pause();
@@ -66,12 +71,11 @@ replay.addEventListener("pointerdown", () => {
   isPlaying = true;
 });
 
-const homeBtn = document.getElementById("home-btn");
-
-homeBtn.addEventListener("pointerdown", () => {
-  audio.pause();           // stoppe le son en cours
-  audio.currentTime = 0;   // remet à zéro
+// -------- RETOUR ACCUEIL --------
+addTouchEvent(homeBtn, () => {
+  audio.pause();
+  audio.currentTime = 0;
   player.classList.add("hidden");
   home.classList.remove("hidden");
-  isPlaying = false;       // autorise la prochaine lecture
+  isPlaying = false;
 });
